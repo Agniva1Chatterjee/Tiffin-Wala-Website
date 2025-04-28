@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pure HTML Navbar</title>
+  <link rel="stylesheet" href="/javaScript/Navbar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div class="modal" id="contactModal" onclick="backdropClick(event)">
+        <div class="modal-content animate-zoom" onclick="event.stopPropagation()">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <h2>Contact</h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4aa0e9e1-6b7e-4d5a-a848-75a2cde20f03"/>
+            <label>Username</label>
+            <input type="text" name="name" placeholder="Enter your name" required />
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <label>Number</label>
+            <input type="number" name="number" placeholder="Enter your number" required />
+            <label>Message</label>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
