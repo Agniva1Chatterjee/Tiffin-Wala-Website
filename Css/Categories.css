@@ -1,182 +1,107 @@
-*{
+body {
+    font-family: sans-serif;
     margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-body{
-    background-color: rgb(88, 85, 85);
-}
-*::selection{
-    background-color: black;
-    color: red;
-}
-#nav-catagories{
-    background-image: url("./images/chicken2.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    height: 800px;
-    /* border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 60px; */
-    position: sticky;
-    /* opacity: 0.79; */
-}
-.nav1{
-    display: flex;
-    align-items: center;
-    font-size: 23px;
-}
-.logo-container{
-    margin-top: 15px;
-    background-image: url("images/Logo-removebg.png");
-    height: 100px;
-    width: 220px;
-    display: flex;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-ul{
-    margin-left:350px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#login{
-    background-color: rgb(79, 79, 228);
-    border-radius: 35px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#login a:hover{
-  background-color: red;
-  color: black;
-}
-.nav1 a{
-    text-decoration: none;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 35px;
-}
-.nav1 ion-icon{
-    font-size: 35px;
-}
-.nav1 a:hover{
-    color: rgb(215, 4, 4);
-    background-color: white;
-}
-.nav1 a:active{
-    color: rgb(0, 0, 0);
-}
-#heading1{
+    background: #f9f9f9;
+  }
+  
+  .menu-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem;
+  }
+  
+  .menu-card {
+    display: inline-block;
+    width: 130px;
     text-align: center;
-    font-size: 4.5rem;
-    color: white;
-}
-.searchbar-container{
-    /* height: 70px;
-    width: 500px; */
-    padding-top:30px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: rgb(255, 255, 255);
-    border-radius: 30px; */
-  }
-  .searchbar-container .icon-holder{
-    height: 53px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius:30px;
-    font-size: 32px;
-    background-color: rgb(255, 0, 0);
-    color: white;
-    font-weight: bolder;
+    background: white;
+    margin-right: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
     cursor: pointer;
   }
-  .searchbar-container #searchBar{
+  
+  .menu-card img {
     height: 50px;
-    width: 450px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius:30px;
-    font-size: 19px;
-    border:2px solid black; 
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+  }
+  
+  .menu-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .filters {
+    padding: 1rem;
+  }
+  
+  .filters label {
+    margin: 0.25rem;
+    background: #f1f1f1;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
     cursor: pointer;
+    display: inline-block;
   }
-  .searchbar-container .icon-holder:hover{
-    background-color: rgb(83, 83, 244);
-    color: black;
-    transition: 0.26s ease-in;
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
   }
-  /* .searchbar-container #searchBar:active{
-    background-color: antiquewhite;
-  } */
-  .searchbar-container #searchBar:hover{
-    background-color: antiquewhite;   
-    transition: 0.26s ease-in;
-}
-.box{
-    background-color: aliceblue;
-    height: 400px;
-    width: 450px;
-    display: inline-block;
-    margin :25px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 15px;
-}
-#section-container{
-    height: 800px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 25px;
-    margin-right: 25px;
-}
-.cart{
-    height: 350px;
-    width: 330px;
-    background-color: rgb(255, 255, 255);
-    display: inline-block;
-    margin: 15px;
-    display: inline-block;
-    justify-items: center;
-}
-.img-section{
+  
+  .card {
+    width: 300px;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
     height: 200px;
-    width: 200px;
-    border-radius: 15px;
-}
-.text-section{
-    font-size: 20px;
-
-}
-.img1{
-    background-image: url('/Css/Food_items/Aloo\ Paratha.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.img2{
-    background-image: url('/Css/Food_items/Chana\ Masala.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.img3{
-    background-image: url('/Css/Food_items/Samosa.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.img4{
-    background-image: url('/Css/Food_items/Paneer\ item1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.img5{
-    background-image: url('/Css/Food_items/Chicken\ item1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+    background: #333;
+    color: white;
+  }
+  
+  .heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;
+  }
+  
+  .heart-icon.liked {
+    color: red;
+  }
+  
+  .bottom-row {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .add-button {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+  }
+  

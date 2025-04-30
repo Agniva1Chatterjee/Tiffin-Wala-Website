@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Cart</title>
+  <link rel="stylesheet" href="/Css/cart.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="main-wrapper">
+      <!-- Left Section -->
+      <div class="left-section">
+        <div class="top-bar">
+          <p id="itemCount">0 item(s) you have selected</p>
+          <p class="explore">Explore More</p>
+        </div>
+
+        <!-- Dynamic Cart Items will be inserted here -->
+        <div id="cartSection"></div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <div class="summary-box">
+          <h2 class="summary-title">Price Details</h2>
+          <div class="divider"></div>
+          <div class="summary-item">
+            <p>MEP</p>
+            <p class="bold" id="mep">₹0</p>
+          </div>
+          <div class="summary-item">
+            <p>Delivery Fee</p>
+            <p class="green">Free</p>
+          </div>
+          <div class="divider"></div>
+          <div class="summary-item space-between">
+            <p>Total Amount</p>
+            <span id="totalItems">Item - 0</span>
+            <p class="total-price" id="totalPrice">₹0</p>
+          </div>
+          <div class="order-button">
+            <button>Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/javaScript/cart.js" type="module"></script>
+</body>
+</html>
