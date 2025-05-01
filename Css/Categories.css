@@ -32,7 +32,7 @@ body {
     transform: scale(1.1);
   }
   
-  .filters {
+  /* .filters {
     padding: 1rem;
   }
   
@@ -44,13 +44,35 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
     display: inline-block;
+  } */
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
+  
+  .filters label {
+    background-color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filters label:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+  }
+  
   
   .cards {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
     gap: 2rem;
+    
   }
   
   .card {
@@ -61,19 +83,25 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
   }
   
   .card img {
     position: absolute;
     width: 100%;
     height: 80%;
+    object-fit: cover;
   
   }
   
   .card-content {
     position: absolute;
     padding: 1rem;
-    background: #333;
+    opacity: 2.5;
     color: white;
   }
   
@@ -109,22 +137,22 @@ body {
   }
 
   
-  .bottom-row :nth-child(1){
-    font-size: xx-large;
-    cursor: pointer;
+  .bottom-row strong {
+    font-size: x-large;
+    color: #333;
   }
   
-  .bottom-row :nth-child(2){
-    font-size:x-large ;
-    cursor: pointer;
-    border-radius: 15px;
-  }
-  
-  .add-button {
-    background: #007bff;
+  .bottom-row button {
+    background-color: #ff6347;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: x-large;
+    transition: background-color 0.3s;
+  }
+  .bottom-row button:hover {
+    background-color: #e5533d;
   }
   
