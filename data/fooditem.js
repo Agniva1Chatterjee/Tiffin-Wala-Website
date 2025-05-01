@@ -1,6 +1,5 @@
 
 export const manu = [
-<<<<<<< HEAD
   { img: "/Css/images/Burger.jpg",
      name: "Butter paneer" },
   { img: "/Css/images/dosa.webp", name: "dosa" },
@@ -8,10 +7,6 @@ export const manu = [
   { img: "/Css/images/Momos.png", name: "momos" },
   { img: "/Css/images/Pizza.jpg", name: "Pizza" },
 
-=======
-  { img: "/Css/Food_items/Paneer item1.jpg", name: "Butter paneer" },
-  { img: "/Css/Food_items/Kher.jpg", name: "Kher" },
->>>>>>> cdd2e2b4467960df6a44375e82ef6864f3cd3549
 ];
 
 export const food = [
@@ -115,29 +110,19 @@ export const food = [
     type: "veg",
     pices: "299",
   },
-<<<<<<< HEAD
 
   {
     id: "11",
-    img: "/Css/images/Pizza.jpg",
-    name: "Pizza",
+    img: "/Css/Food_items/Kher.jpg",
+    name: "Kher",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.0",
-=======
-  {
-    id: "11",
-    img: "/Css/Food_items/Samosa.jpg",
-    name: "Samosa",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-    rating: "4.2",
->>>>>>> cdd2e2b4467960df6a44375e82ef6864f3cd3549
     time: "20",
-    type: "veg",
+    type: "Sweet",
     pices: "299",
   },
   {
     id: "12",
-<<<<<<< HEAD
     img: "/Css/images/Pizza.jpg",
     name: "Pizza ",
     description: "Lorem ipsum dolor sit amet consectetur.",
@@ -150,12 +135,12 @@ export const food = [
 
   {
     id: "13",
-    img: "/Css/images/Pizza.jpg",
-    name: " Chicken Pizza ",
+    img: "/Css/Food_items/Rashmalai.jpg",
+    name: " Rashmalai",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.0",
     time: "20",
-    type: "non-veg",
+    type: "sweet",
     pices: "399",
   },
   {
@@ -167,34 +152,35 @@ export const food = [
     time: "20",
     type: "non-veg",
     pices: "199",
-=======
-    img: "/Css/Food_items/Rasgulla.webp",
-    name: "Rasgulla",
-    description: "Lorem ipsum dolor sit amet consectetur.",
-    rating: "4.2",
-    time: "20",
-    type: "sweet",
-    pices: "299",
   },
   {
-    id: "13",
-    img: "/Css/Food_items/paneer item2.jpg",
+    id: "15",
+    img: "/Css/Food_items/Paneer item2.jpg",
     name: "Palak Paneer",
     description: "Lorem ipsum dolor sit amet consectetur.",
-    rating: "4.2",
+    rating: "4.5",
     time: "20",
     type: "veg",
-    pices: "299",
+    pices: "199",
   },
   {
-    id: "14",
-    img: "/Css/Food_items/Malai Kofta.jpg",
-    name: "Malai Kofta",
+    id: "15",
+    img: "/Css/Food_items/Rogan Josh.jpg",
+    name: "Rogan Josh",
     description: "Lorem ipsum dolor sit amet consectetur.",
-    rating: "4.2",
+    rating: "4.5",
     time: "20",
-    type: "sweet",
-    pices: "299",
->>>>>>> cdd2e2b4467960df6a44375e82ef6864f3cd3549
+    type: "non-veg",
+    pices: "599",
+  },
+  {
+    id: "15",
+    img: "/Css/Food_items/Chicken item1.jpg",
+    name: "Chicken Masala",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.5",
+    time: "20",
+    type: "non-veg",
+    pices: "399",
   },
 ];
