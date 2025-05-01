@@ -12,8 +12,9 @@ food.forEach((item) => {
     <div class="card-content">
       <h3>${item.name}</h3>
       <p>${item.description}</p>
-      <p>${item.rating} ⭐ | ${item.time} min | ${item.type}</p>
+     
     </div>
+    <div class ="delites">   <p> ⭐${item.rating} | ${item.time} min | ${item.type}</p> </div>
     <div class="bottom-row">
       <strong>₹${item.pices}</strong>
       <button class="add-to-cart">Add to cart</button>
