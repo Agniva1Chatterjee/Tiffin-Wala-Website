@@ -1,7 +1,12 @@
 
 export const manu = [
-  { img: "/Css/image/Chicken.jpg", name: "Butter paneer" },
-  { img: "/image/momo.jpg", name: "Momo" },
+  { img: "/Css/images/Burger.jpg",
+     name: "Butter paneer" },
+  { img: "/Css/images/dosa.webp", name: "dosa" },
+  { img: "/Css/images/Chicken.jpg", name: "Chicken" },
+  { img: "/Css/images/Momos.png", name: "momos" },
+  { img: "/Css/images/Pizza.jpg", name: "Pizza" },
+
 ];
 
 export const food = [
@@ -104,5 +109,48 @@ export const food = [
     time: "20",
     type: "veg",
     pices: "299",
+  },
+
+  {
+    id: "11",
+    img: "/Css/images/Pizza.jpg",
+    name: "Pizza",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.0",
+    time: "20",
+    type: "veg",
+    pices: "299",
+  },
+  {
+    id: "12",
+    img: "/Css/images/Pizza.jpg",
+    name: "Pizza ",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.0",
+    time: "20",
+    type: "non-veg",
+    pices: "399",
+  },
+  
+
+  {
+    id: "13",
+    img: "/Css/images/Pizza.jpg",
+    name: " Chicken Pizza ",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.0",
+    time: "20",
+    type: "non-veg",
+    pices: "399",
+  },
+  {
+    id: "14",
+    img: "/Css/images/Momos.png",
+    name: "momos ",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.5",
+    time: "20",
+    type: "non-veg",
+    pices: "199",
   },
 ];

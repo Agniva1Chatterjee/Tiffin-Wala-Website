@@ -65,23 +65,44 @@ function renderCards(data) {
 // Initial load
 renderCards(food);
 
-// Filters
+const filterTitle = document.getElementById("filter-title");
+
 document.getElementById("filter-veg").addEventListener("click", () => {
   const vegItems = food.filter(item => item.type.toLowerCase() === "veg");
   renderCards(vegItems);
+  filterTitle.textContent = "Showing: Veg Items";
 });
 
 document.getElementById("filter-nonveg").addEventListener("click", () => {
   const nonVegItems = food.filter(item => item.type.toLowerCase() === "non-veg");
   renderCards(nonVegItems);
+  filterTitle.textContent = "Showing: Non-Veg Items";
 });
 
 document.getElementById("filter-low-high").addEventListener("click", () => {
   const sorted = [...food].sort((a, b) => a.pices - b.pices);
   renderCards(sorted);
+  filterTitle.textContent = "Showing: Cost Low to High";
 });
 
 document.getElementById("filter-high-low").addEventListener("click", () => {
   const sorted = [...food].sort((a, b) => b.pices - a.pices);
   renderCards(sorted);
+  filterTitle.textContent = "Showing: Cost High to Low";
+});
+
+document.getElementById("filter-clear").addEventListener("click", () => {
+  renderCards(food);
+  filterTitle.textContent = "All Items";
+});
+
+// After rendering manu items
+document.querySelectorAll(".menu-card").forEach(menuCard => {
+  menuCard.addEventListener("click", () => {
+    const selectedItem = menuCard.querySelector("p").textContent.toLowerCase();
+    const filteredItems = food.filter(item =>
+      item.name.toLowerCase().includes(selectedItem)
+    );
+    renderCards(filteredItems);
+  });
 });
