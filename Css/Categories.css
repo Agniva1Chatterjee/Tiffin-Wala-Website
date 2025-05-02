@@ -1,3 +1,7 @@
+*{
+  padding: 0;
+  margin: 0;
+}
 body {
     font-family: sans-serif;
     margin: 0;
@@ -156,4 +160,30 @@ body {
   .bottom-row button:hover {
     background-color: #e5533d;
   }
-  
+  #input-search{
+   margin: 45px;
+   height: 3.5rem;
+   width: 25rem;
+   display: flex;
+   justify-self: center;
+  }
+  #search{
+    width: 19rem;
+    height: 3rem;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    border: transparent;
+  }
+  #searchBtn{
+    width: 5rem;
+    height: 3rem;
+    font-size: 1.7rem;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border: none;
+    background-color: red;
+  }
+  #searchBtn:active{
+    background-color: blue;
+    color: white;
+  }
