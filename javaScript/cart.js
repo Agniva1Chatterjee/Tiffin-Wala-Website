@@ -27,14 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="tag">${item.tag || "veg"}</span>
           </div>
         </div>
-        <div class="card-price">
-          <p class="price">₹${item.price}</p>
-          <div class="qty-controls">
-            <button class="decrease" data-index="${index}">-</button>
-            <p>${item.quantity}</p>
-            <button class="increase" data-index="${index}">+</button>
-          </div>
-        </div>
+      <div class="card-price">
+  <p class="price">₹${item.price}</p>
+  <div class="qty-controls">
+    <button class="decrease" data-index="${index}">-</button>
+    <p>${item.quantity}</p>
+    <button class="increase" data-index="${index}">+</button>
+  </div>
+  <button class="delete-item" data-index="${index}">🗑️</button>
+</div>
+
       `;
       cartSection.appendChild(cartItem);
     });
@@ -62,4 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+  // Quantity & Delete Button Listeners
+cartSection.addEventListener("click", (e) => {
+  const index = parseInt(e.target.dataset.index);
+
+  if (e.target.classList.contains("increase")) {
+    cartData[index].quantity++;
+  } else if (e.target.classList.contains("decrease")) {
+    if (cartData[index].quantity > 1) {
+      cartData[index].quantity--;
+    }
+  } else if (e.target.classList.contains("delete-item")) {
+    cartData.splice(index, 1); // Remove item
+  } else {
+    return; // Exit if unrelated click
+  }
+
+  // Save updated cart and reload
+  localStorage.setItem("cartItems", JSON.stringify(cartData));
+  location.reload();
+});
