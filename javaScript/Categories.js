@@ -112,3 +112,10 @@ document.querySelectorAll(".menu-card").forEach(menuCard => {
     renderCards(filteredItems);
   });
 });
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const searchValue = document.getElementById("search").value.toLowerCase();
+  const filtered = food.filter(item =>
+    item.name.toLowerCase().includes(searchValue)
+  );
+  renderCards(filtered);
+});
