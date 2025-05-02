@@ -77,6 +77,12 @@ document.getElementById("filter-nonveg").addEventListener("click", () => {
   const nonVegItems = food.filter(item => item.type.toLowerCase() === "non-veg");
   renderCards(nonVegItems);
   filterTitle.textContent = "Showing: Non-Veg Items";
+}); 
+
+document.getElementById("filter-sweet").addEventListener("click", () => {
+  const nonVegItems = food.filter(item => item.type.toLowerCase() === "sweet");
+  renderCards(nonVegItems);
+  filterTitle.textContent = "Showing: sweet Items";
 });
 
 document.getElementById("filter-low-high").addEventListener("click", () => {
