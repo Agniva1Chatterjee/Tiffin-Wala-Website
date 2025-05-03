@@ -1,7 +1,6 @@
 
 export const manu = [
-  { img: "/Css/images/Burger.jpg",
-     name: "Butter paneer" },
+  { img: "/Css/images/Burger.jpg",name: "Butter paneer"},
   { img: "/Css/images/dosa.webp", name: "dosa" },
   { img: "/Css/images/Chicken.jpg", name: "Chicken" },
   { img: "/Css/images/Momos.png", name: "momos" },
@@ -58,7 +57,7 @@ export const food = [
     rating: "4.2",
     time: "20",
     type: "non-veg",
-    pices: "299",
+    pices: "149",
   },
   {
     id: "6",
@@ -166,7 +165,7 @@ export const food = [
   {
     id: "16",
     img: "/Css/Food_items/Rogan Josh.jpg",
-    name: "Rogan Josh",
+    name: "Rogan Josh(Mutton)",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
     time: "20",
@@ -342,5 +341,15 @@ export const food = [
     time: "20",
     type: "veg",
     pices: "60",
+  },
+  {
+    id: "34",
+    img: "/Css/Food_items/Samosa.jpg",
+    name: "Samosa",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    rating: "4.5",
+    time: "20",
+    type: "veg",
+    pices: "40",
   },
 ];
