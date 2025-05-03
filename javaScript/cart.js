@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       <div class="card-price">
-  <p class="price">₹${item.price}</p>
-  <div class="qty-controls">
+      <p class="price">₹${item.price}</p>
+      <div class="qty-controls">
+      <button class="delete-item" data-index="${index}">🗑️</button>
     <button class="decrease" data-index="${index}">-</button>
     <p>${item.quantity}</p>
     <button class="increase" data-index="${index}">+</button>
-  </div>
-  <button class="delete-item" data-index="${index}">🗑️</button>
+    </div>
 </div>
 
       `;
@@ -44,26 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update summary section
     itemCountEl.textContent = `${cartData.length} item(s) you have selected`;
     mepEl.textContent = `₹${totalAmount}`;
-    totalItemsEl.textContent = `Item - ${cartData.length}`;
+    const totalQuantity = cartData.reduce((sum, item) => sum + item.quantity, 0);
+    itemCountEl.textContent = `${totalQuantity} item(s) you have selected`;
+    totalItemsEl.textContent = `Item - ${totalQuantity}`;
+    
     totalPriceEl.textContent = `₹${totalAmount}`;
   
     // Quantity Button Listeners
-    cartSection.addEventListener("click", (e) => {
-      if (e.target.classList.contains("increase") || e.target.classList.contains("decrease")) {
-        const index = parseInt(e.target.dataset.index);
-        if (e.target.classList.contains("increase")) {
-          cartData[index].quantity++;
-        } else if (cartData[index].quantity > 1) {
-          cartData[index].quantity--;
-        }
-  
-        // Save updated cart
-        localStorage.setItem("cartItems", JSON.stringify(cartData));
-        // Reload to reflect changes
-        location.reload();
-      }
-    });
-  });
+    
+    
+
   // Quantity & Delete Button Listeners
 cartSection.addEventListener("click", (e) => {
   const index = parseInt(e.target.dataset.index);
@@ -83,4 +73,5 @@ cartSection.addEventListener("click", (e) => {
   // Save updated cart and reload
   localStorage.setItem("cartItems", JSON.stringify(cartData));
   location.reload();
+});
 });

@@ -157,3 +157,22 @@ body {
     background-color: #e5533d;
   }
   
+  .cart-float-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722;
+    color: white;
+    font-size: 24px;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-float-btn:hover {
+    background-color: #e64a19;
+  }
+  
