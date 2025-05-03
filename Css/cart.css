@@ -217,7 +217,6 @@
   .delete-item {
     background: transparent;
     border-right: 2px solid black;
-  
     font-size: 18px;
     cursor: pointer;
     color: red;
