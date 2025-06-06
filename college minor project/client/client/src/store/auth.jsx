@@ -12,7 +12,7 @@ export const  AuthProvider = ({children}) =>{
   // Store token and update state
   const storeTokenInLS = (serverToken) => {
     localStorage.setItem("token", serverToken);
-    // setToken(serverToken);
+    setToken(serverToken);
   };
 
   let isLoggedin = !!token;

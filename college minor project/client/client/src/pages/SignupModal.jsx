@@ -59,7 +59,7 @@ const {storeTokenInLS} = useAuth();
     email: '',
     phone: '',
     password: '',});
-    Navigate("/login");
+    Navigate("/");
  } else{
      toast.error(res_data.extraDetails ? res_data.extraDetails: res_data.message, {
         position: "top-right",
