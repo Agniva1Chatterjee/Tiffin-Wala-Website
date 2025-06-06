@@ -9,7 +9,7 @@ const loginSchema = z.object({
   
     password: z
     .string({required_error:"password is required"}).trim()
-    .min(7,{message: "password must at lest of 6 chars"})
+    .min(6,{message: "password must at lest of 6 chars"})
     .max(100,{message: "oassword must not be more then 100 characters"}),
 })
 
@@ -22,8 +22,8 @@ const signupSchema = loginSchema.extend ({
   
     phone: z
     .string({required_error:"phone number is required"}).trim()
-    
-    .max(10,{message: "phone number must not be more then 10 characters"}),
+    .min(10,{message: "phone number must at lest of 10 chars"})
+    .max(20,{message: "phone number must not be more then 10 characters"}),
   
 })
 

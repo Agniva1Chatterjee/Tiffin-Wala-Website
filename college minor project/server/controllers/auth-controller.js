@@ -69,20 +69,20 @@ const login = async (req, res, next) => {
 };
 
 
-// // User logic to send user data
-// const user = async (req, res) => {
-//   try {
-//     const userData = req.user; // Set by authMiddleware
-//     console.log("User data:", userData);
+// User logic to send user data
+const user = async (req, res) => {
+  try {
+    const userData = req.user; // Set by authMiddleware
+    console.log("User data:", userData);
 
-//     return res.status(200).json({ userData });
-//   } catch (error) {
-//     console.error(`Error from the user route: ${error}`);
-//     return res.status(500).json({ message: "Internal Server Error" });
-//   }
-// };
-
-
+    return res.status(200).json({ userData });
+  } catch (error) {
+    console.error(`Error from the user route: ${error}`);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
 
 
-module.exports = { home, register, login,  };
+
+
+module.exports = { home, register, login, user, };

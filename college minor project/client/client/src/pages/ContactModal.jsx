@@ -1,96 +1,119 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import { useAuth } from "../store/auth";
 
-const ContactModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const defaultConatctFormData ={  
+   username: "",
+  email: "",
+  message: "",};
+const ContactPage = () => {
+     const [contact, setContact] = useState(defaultConatctFormData);
+  
+      const [userData, setUserData] = useState(true);
+  const { user } = useAuth();
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
-
-  const handleBackdropClick = (e) => {
-    if (e.target.classList.contains("modal")) {
-      closeModal();
+ 
+    if (userData && user) {
+      setContact({
+        username: user.username,
+        email: user.email ,
+        message: "",
+      });
+      setUserData(false);
     }
-  };
+ 
 
+        const handleInput = (e) => {
+        const { name, value } = e.target;
+     setContact((prevcontact) => ({
+          ...prevcontact,
+          [name]: value,
+        }));
+      };
+    
+        const handleSubmit = async(e) => {
+        e.preventDefault();
+        console.log(contact);
+      try {
+    
+    const response = await fetch("http://localhost:5000/api/from/contact",{
+      method: "POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify(contact),
+    });
+     if(response.ok){
+      setContact(defaultConatctFormData);
+      alert('message sent successfully')
+     }
+   } catch (error) {
+    console.log(error);
+    
+   }
+ 
+
+      }
   return (
-    <div>
-      <button
-        onClick={openModal}
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Contact
-      </button>
+    <div className="max-w-2xl mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+      <form onSubmit={handleSubmit} className="space-y-4"> 
 
-      {isOpen && (
-        <div
-          id="contactModal"
-          className="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={handleBackdropClick}
-        >
-          <div
-            className="modal-content bg-white p-6 rounded shadow-lg w-80 relative animate-zoom"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span
-              className="close-modal absolute top-2 right-4 text-xl font-bold cursor-pointer text-gray-500 hover:text-black"
-              onClick={closeModal}
-            >
-              &times;
-            </span>
-            <h2 className="text-xl font-semibold mb-4">Contact</h2>
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="space-y-3"
-            >
-              <input
-                type="hidden"
-                name="access_key"
-                value="4aa0e9e1-6b7e-4d5a-a848-75a2cde20f03"
-              />
-              <label className="block text-sm">Username</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
+        <div>
+          <label className="block mb-1 font-medium">Username</label>
+          <input
+                  type="text"
+                name="username"
+                placeholder="Enter your user name"
+                id="username"
+                value={contact.username}
+                onChange={handleInput}
+                autoComplete="off"
                 required
-                className="w-full border p-2 rounded"
-              />
-              <label className="block text-sm">Email</label>
-              <input
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1 font-medium">Email</label>
+          <input
+        
                 type="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="Enter your user email"
+                id="email"
+                value={contact.email}
+                onChange={handleInput}
+                autoComplete="off"
                 required
-                className="w-full border p-2 rounded"
-              />
-              <label className="block text-sm">Number</label>
-              <input
-                type="number"
-                name="number"
-                placeholder="Enter your number"
-                required
-                className="w-full border p-2 rounded"
-              />
-              <label className="block text-sm">Message</label>
-              <textarea
-                name="message"
-                placeholder="Your message"
-                required
-                className="w-full border p-2 rounded"
-              />
-              <button
-                type="submit"
-                className="w-full mt-2 bg-green-600 text-white py-2 rounded hover:bg-green-700"
-              >
-                Send
-              </button>
-            </form>
-          </div>
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+          />
         </div>
-      )}
+
+   
+
+        <div>
+          <label className="block mb-1 font-medium">Message</label>
+           <textarea
+                name="message"
+                id="message"
+                value={contact.message}
+                onChange={handleInput}
+                required
+                autoComplete="off"
+                cols={30}
+                rows={10}
+              ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+        >
+          Send
+        </button>
+      </form>
     </div>
   );
 };
 
-export default ContactModal;
+export default ContactPage;

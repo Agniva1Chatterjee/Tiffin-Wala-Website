@@ -1,9 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { food, manu } from "../data/fooditem";
+import "../Css/Categories.css";
+import { IonIcon } from "@ionic/react";
+import { searchOutline, cartOutline } from "ionicons/icons";
 
-export default function CategoriesPage() {
-  const [displayedItems, setDisplayedItems] = useState(food);
+const Categories = () => {
+  const [items, setItems] = useState(food);
   const [filterTitle, setFilterTitle] = useState("All Items");
+
+  const handleFilter = (type) => {
+    if (type === "veg") {
+      setItems(food.filter(item => item.type.toLowerCase() === "veg"));
+      setFilterTitle("Showing: Veg Items");
+    } else if (type === "non-veg") {
+      setItems(food.filter(item => item.type.toLowerCase() === "non-veg"));
+      setFilterTitle("Showing: Non-Veg Items");
+    } else if (type === "sweet") {
+      setItems(food.filter(item => item.type.toLowerCase() === "sweet"));
+      setFilterTitle("Showing: Sweet Items");
+    } else if (type === "low-high") {
+      setItems([...food].sort((a, b) => a.pices - b.pices));
+      setFilterTitle("Showing: Cost Low to High");
+    } else if (type === "high-low") {
+      setItems([...food].sort((a, b) => b.pices - a.pices));
+      setFilterTitle("Showing: Cost High to Low");
+    } else {
+      setItems(food);
+      setFilterTitle("All Items");
+    }
+  };
+
+  const handleSearch = () => {
+    const val = document.getElementById("search").value.toLowerCase();
+    const filtered = food.filter(item =>
+      item.name.toLowerCase().includes(val)
+    );
+    setItems(filtered);
+    setFilterTitle(`Search Result for "${val}"`);
+  };
+
+  const handleMenuClick = (itemName) => {
+    const filtered = food.filter(item =>
+      item.name.toLowerCase().includes(itemName.toLowerCase())
+    );
+    setItems(filtered);
+    setFilterTitle(`Showing: ${itemName}`);
+  };
 
   const handleAddToCart = (item) => {
     const newItem = {
@@ -12,12 +54,12 @@ export default function CategoriesPage() {
       image: item.img,
       price: parseInt(item.pices),
       quantity: 1,
-      tag: item.type
+      tag: item.type,
     };
 
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const existing = cart.find(product => product.title === newItem.title);
 
+    const existing = cart.find(product => product.title === newItem.title);
     if (existing) {
       existing.quantity += 1;
     } else {
@@ -28,72 +70,51 @@ export default function CategoriesPage() {
     alert(`${item.name} added to cart!`);
   };
 
-  const handleFilter = (type) => {
-    if (type === "clear") {
-      setDisplayedItems(food);
-      setFilterTitle("All Items");
-    } else if (type === "low-high") {
-      setDisplayedItems([...food].sort((a, b) => a.pices - b.pices));
-      setFilterTitle("Showing: Cost Low to High");
-    } else if (type === "high-low") {
-      setDisplayedItems([...food].sort((a, b) => b.pices - a.pices));
-      setFilterTitle("Showing: Cost High to Low");
-    } else {
-      const filtered = food.filter(item => item.type.toLowerCase() === type);
-      setDisplayedItems(filtered);
-      setFilterTitle(`Showing: ${type.charAt(0).toUpperCase() + type.slice(1)} Items`);
-    }
-  };
-
-  const handleSearch = () => {
-    const searchValue = document.getElementById("search").value.toLowerCase();
-    const filtered = food.filter(item => item.name.toLowerCase().includes(searchValue));
-    setDisplayedItems(filtered);
-  };
-
-  const handleMenuClick = (name) => {
-    const selectedItem = name.toLowerCase();
-    const filteredItems = food.filter(item => item.name.toLowerCase().includes(selectedItem));
-    setDisplayedItems(filteredItems);
-  };
-
   return (
-    <div>
+    <div className="categories-page">
+      {/* Search Input */}
       <div id="input-search">
         <input type="search" id="search" placeholder="Search For Your Food Item" />
-        <button onClick={handleSearch}><ion-icon name="search-outline"></ion-icon></button>
+        <button id="searchBtn" onClick={handleSearch}>
+          <IonIcon icon={searchOutline} />
+        </button>
       </div>
 
+      {/* Menu Scroll */}
       <div className="menu-scroll">
-        {manu.map((item, index) => (
-          <div key={index} className="menu-card" onClick={() => handleMenuClick(item.name)}>
-            <img src={item.img} alt="food" />
-            <p>{item.name}</p>
+        {manu.map((m, idx) => (
+          <div className="menu-card" key={idx} onClick={() => handleMenuClick(m.name)}>
+            <img src={m.img} alt="food" />
+            <p>{m.name}</p>
           </div>
         ))}
       </div>
 
+      {/* Filters */}
       <div className="filters">
         <label onClick={() => handleFilter("veg")}>Veg</label>
         <label onClick={() => handleFilter("non-veg")}>Non-Veg</label>
         <label onClick={() => handleFilter("sweet")}>Sweet</label>
         <label onClick={() => handleFilter("low-high")}>Cost: Low to High</label>
         <label onClick={() => handleFilter("high-low")}>Cost: High to Low</label>
-        <label style={{ color: "red" }} onClick={() => handleFilter("clear")}>Clear Filters</label>
+        <label onClick={() => handleFilter("clear")} style={{ color: "red" }}>Clear Filters</label>
       </div>
 
-      <p style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "10px" }}>{filterTitle}</p>
+      <p style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "10px" }}>
+        {filterTitle}
+      </p>
 
+      {/* Food Cards */}
       <div className="cards">
-        {displayedItems.map((item, index) => (
-          <div key={index} className="card">
+        {items.map((item, idx) => (
+          <div className="card" key={idx}>
             <img src={item.img} alt={item.name} />
             <div className="card-content">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
             </div>
             <div className="delites">
-              <p> ⭐{item.rating} | {item.time} min | {item.type}</p>
+              <p>⭐ {item.rating} | {item.time} min | {item.type}</p>
             </div>
             <div className="bottom-row">
               <strong>₹{item.pices}</strong>
@@ -103,9 +124,14 @@ export default function CategoriesPage() {
         ))}
       </div>
 
-      <div className="cart-float-btn">
-        <a href="/Docs/cart.html"><ion-icon name="cart-outline"></ion-icon></a>
-      </div>
+<div className="order-button">
+  <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+    <IonIcon icon={cartOutline} className="text-xl" />
+    Order
+  </button>
+</div>
     </div>
   );
-}
+};
+
+export default Categories;

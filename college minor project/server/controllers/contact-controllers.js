@@ -16,3 +16,7 @@ try {
 
 }
 }
+
+
+
+module.exports = contactForm;

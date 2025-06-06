@@ -1,41 +1,55 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import "../Css/cart.css"; // Rename your CSS file accordingly
+import { useNavigate } from "react-router-dom";
 
-const Cart = () => {
-  const [cartData, setCartData] = useState([]);
+const CartPage = () => {
+  const [cart, setCart] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartData(storedCart);
+    const data = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCart(data);
+    updateSummary(data);
   }, []);
 
+  const updateSummary = (data) => {
+    let total = 0;
+    let quantity = 0;
+    data.forEach(item => {
+      total += item.price * item.quantity;
+      quantity += item.quantity;
+    });
+    setTotalAmount(total);
+    setTotalQuantity(quantity);
+  };
+
   const handleIncrease = (index) => {
-    const newCart = [...cartData];
-    newCart[index].quantity++;
-    updateCart(newCart);
+    const updated = [...cart];
+    updated[index].quantity += 1;
+    updateCart(updated);
   };
 
   const handleDecrease = (index) => {
-    const newCart = [...cartData];
-    if (newCart[index].quantity > 1) {
-      newCart[index].quantity--;
-      updateCart(newCart);
+    const updated = [...cart];
+    if (updated[index].quantity > 1) {
+      updated[index].quantity -= 1;
+      updateCart(updated);
     }
   };
 
   const handleDelete = (index) => {
-    const newCart = [...cartData];
-    newCart.splice(index, 1);
-    updateCart(newCart);
+    const updated = [...cart];
+    updated.splice(index, 1);
+    updateCart(updated);
   };
 
-  const updateCart = (newCart) => {
-    localStorage.setItem("cartItems", JSON.stringify(newCart));
-    setCartData(newCart);
+  const updateCart = (updatedCart) => {
+    setCart(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    updateSummary(updatedCart);
   };
-
-  const totalAmount = cartData.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const totalQuantity = cartData.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="container">
@@ -43,12 +57,12 @@ const Cart = () => {
         {/* Left Section */}
         <div className="left-section">
           <div className="top-bar">
-            <p>{totalQuantity} item(s) you have selected</p>
-            <Link to="/categories"><p className="explore">Explore More</p></Link>
+            <p id="itemCount">{totalQuantity} item(s) you have selected</p>
+            <a href="/Categories"><p className="explore">Explore More</p></a>
           </div>
 
           <div id="cartSection">
-            {cartData.map((item, index) => (
+            {cart.map((item, index) => (
               <div className="card" key={index}>
                 <div className="card-info">
                   <img src={item.image} alt={item.title} className="food-img" />
@@ -79,7 +93,7 @@ const Cart = () => {
             <div className="divider"></div>
             <div className="summary-item">
               <p>Total</p>
-              <p className="bold">₹{totalAmount}</p>
+              <p className="bold" id="mep">₹{totalAmount}</p>
             </div>
             <div className="summary-item">
               <p>Delivery Fee</p>
@@ -88,12 +102,12 @@ const Cart = () => {
             <div className="divider"></div>
             <div className="summary-item space-between">
               <p>Total Amount</p>
-              <span>Item - {totalQuantity}</span>
-              <p className="total-price">₹{totalAmount}</p>
+              <span id="totalItems">Item - {totalQuantity}</span>
+              <p className="total-price" id="totalPrice">₹{totalAmount}</p>
             </div>
-            <div className="order-button">
-              <button>Order</button>
-            </div>
+         <div className="order-button">
+  <button onClick={() => navigate("/order")}>Order</button>
+</div>
           </div>
         </div>
       </div>
@@ -101,4 +115,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartPage;

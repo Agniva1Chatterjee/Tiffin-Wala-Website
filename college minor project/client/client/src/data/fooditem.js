@@ -1,17 +1,17 @@
 
 export const manu = [
-  { img: "/Css/images/Burger.jpg",name: "Butter paneer"},
-  { img: "/Css/images/dosa.webp", name: "dosa" },
-  { img: "/Css/images/Chicken.jpg", name: "Chicken" },
-  { img: "/Css/images/Momos.png", name: "momos" },
-  { img: "/Css/images/Pizza.jpg", name: "Pizza" },
+  { img: "/images/Burger.jpg",name: "Butter paneer"},
+  { img: "/images/dosa.webp", name: "dosa" },
+  { img: "/images/Chicken.jpg", name: "Chicken" },
+  { img: "/images/Momos.png", name: "momos" },
+  { img: "/images/Pizza.jpg", name: "Pizza" },
 
 ];
 
 export const food = [
   {
     id: "1",
-    img: "/Css/Food_items/Paneer item1.jpg",
+    img: "/Food_items/Paneer item1.jpg",
     name: "Butter paneer",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -21,7 +21,7 @@ export const food = [
   },
   {
     id: "2",
-    img: "/Css/Food_items/Aloo Paratha.jpg",
+    img: "/Food_items/Aloo Paratha.jpg",
     name: "Aloo paratha",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -31,7 +31,7 @@ export const food = [
   },
   {
     id: "3",
-    img: "/Css/Food_items/Fish Curry.jpg",
+    img: "/Food_items/Fish Curry.jpg",
     name: "Fish Curry",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -41,7 +41,7 @@ export const food = [
   },
   {
     id: "4",
-    img: "/Css/Food_items/Chana Masala.jpg",
+    img: "/Food_items/Chana Masala.jpg",
     name: "Chana masala",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -51,7 +51,7 @@ export const food = [
   },
   {
     id: "5",
-    img: "/Css/Food_items/Chicken Samosa.jpg",
+    img: "/Food_items/Chicken Samosa.jpg",
     name: "Chicken keema samosa",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -61,7 +61,7 @@ export const food = [
   },
   {
     id: "6",
-    img:"/Css/Food_items/Dal Makhni.jpg",
+    img:"/Food_items/Dal Makhni.jpg",
     name: "Dal Makhani",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -71,7 +71,7 @@ export const food = [
   },
   {
     id: "7",
-    img:"/Css/Food_items/Dhokla.jpg",
+    img:"/Food_items/Dhokla.jpg",
     name: "Dhokla",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -81,7 +81,7 @@ export const food = [
   },
   {
     id: "8",
-    img: "/Css/Food_items/Mutton Curry.jpg",
+    img: "/Food_items/Mutton Curry.jpg",
     name: "Mutton Curry",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -91,7 +91,7 @@ export const food = [
   },
   {
     id: "9",
-    img: "/Css/Food_items/Gajar Halwa.jpg",
+    img: "/Food_items/Gajar Halwa.jpg",
     name: "Gajar ka Halwa",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -101,7 +101,7 @@ export const food = [
   },
   {
     id: "10",
-    img: "/Css/Food_items/Vada Pav.webp",
+    img: "/Food_items/Vada Pav.webp",
     name: "Vada Pav",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.2",
@@ -112,7 +112,7 @@ export const food = [
 
   {
     id: "11",
-    img: "/Css/Food_items/Kher.jpg",
+    img: "/Food_items/Kher.jpg",
     name: "Kher",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.0",
@@ -122,7 +122,7 @@ export const food = [
   },
   {
     id: "12",
-    img: "/Css/images/Pizza.jpg",
+    img: "/images/Pizza.jpg",
     name: "Pizza ",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.0",
@@ -134,7 +134,7 @@ export const food = [
 
   {
     id: "13",
-    img: "/Css/Food_items/Rashmalai.jpg",
+    img: "/Food_items/Rashmalai.jpg",
     name: " Rashmalai",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.0",
@@ -144,7 +144,7 @@ export const food = [
   },
   {
     id: "14",
-    img: "/Css/images/Momos.png",
+    img: "/images/Momos.png",
     name: "momos ",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -154,7 +154,7 @@ export const food = [
   },
   {
     id: "15",
-    img: "/Css/Food_items/Paneer item2.jpg",
+    img: "/Food_items/Paneer item2.jpg",
     name: "Palak Paneer",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -164,7 +164,7 @@ export const food = [
   },
   {
     id: "16",
-    img: "/Css/Food_items/Rogan Josh.jpg",
+    img: "/Food_items/Rogan Josh.jpg",
     name: "Rogan Josh(Mutton)",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -174,7 +174,7 @@ export const food = [
   },
   {
     id: "17",
-    img: "/Css/Food_items/Chicken item1.jpg",
+    img: "/Food_items/Chicken item1.jpg",
     name: "Chicken Masala",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -184,7 +184,7 @@ export const food = [
   },
   {
     id: "18",
-    img: "/Css/Food_items/Basmati Rice.jpg",
+    img: "/Food_items/Basmati Rice.jpg",
     name: "Basmati Rice",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -194,7 +194,7 @@ export const food = [
   },
   {
     id: "19",
-    img: "/Css/Food_items/Masala Omlett.webp",
+    img: "/Food_items/Masala Omlett.webp",
     name: "Masala Omlett",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -204,7 +204,7 @@ export const food = [
   },
   {
     id: "20",
-    img: "/Css/Food_items/Masala Pomfret.jpg",
+    img: "/Food_items/Masala Pomfret.jpg",
     name: "Promfret Masala",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -214,7 +214,7 @@ export const food = [
   },
   {
     id: "21",
-    img: "/Css/Food_items/Default Biryani.jpg",
+    img: "/Food_items/Default Biryani.jpg",
     name: "Chicken Biryani",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -224,7 +224,7 @@ export const food = [
   },
   {
     id: "22",
-    img: "/Css/Food_items/Plain Rice.jpg",
+    img: "/Food_items/Plain Rice.jpg",
     name: "Rice",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -234,7 +234,7 @@ export const food = [
   },
   {
     id: "23",
-    img: "/Css/Food_items/Mutton Biryani.jpg",
+    img: "/Food_items/Mutton Biryani.jpg",
     name: "Mutton Biryani",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -244,7 +244,7 @@ export const food = [
   },
   {
     id: "24",
-    img: "/Css/Food_items/Jira Rice.jpg",
+    img: "/Food_items/Jira Rice.jpg",
     name: "Jira Rice",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -254,7 +254,7 @@ export const food = [
   },
   {
     id: "25",
-    img: "/Css/Food_items/Fish Finger.jpg",
+    img: "/Food_items/Fish Finger.jpg",
     name: "Fish Finger",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -264,7 +264,7 @@ export const food = [
   },
   {
     id: "26",
-    img: "/Css/Food_items/veg pulao.jpg",
+    img: "/Food_items/veg pulao.jpg",
     name: "Veg Pulao",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -274,7 +274,7 @@ export const food = [
   },
   {
     id: "27",
-    img: "/Css/Food_items/Chicken Pakoda.jpg",
+    img: "/Food_items/Chicken Pakoda.jpg",
     name: "Chicken Pakora",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -284,7 +284,7 @@ export const food = [
   },
   {
     id: "28",
-    img: "/Css/Food_items/Veg Pakora.webp",
+    img: "/Food_items/Veg Pakora.webp",
     name: "Veg Pakora",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -294,7 +294,7 @@ export const food = [
   },
   {
     id: "29",
-    img: "/Css/Food_items/Kichdi.jpg",
+    img: "/Food_items/Kichdi.jpg",
     name: "Kichdi",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -304,7 +304,7 @@ export const food = [
   },
   {
     id: "30",
-    img: "/Css/Food_items/Dal Tadka.webp",
+    img: "/Food_items/Dal Tadka.webp",
     name: "Dal Tadka",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -314,7 +314,7 @@ export const food = [
   },
   {
     id: "31",
-    img: "/Css/Food_items/Panir Tikka.jpg",
+    img: "/Food_items/Panir Tikka.jpg",
     name: "Panir Tikka",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -324,7 +324,7 @@ export const food = [
   },
   {
     id: "32",
-    img: "/Css/Food_items/Chicken Lolipop.jpg",
+    img: "/Food_items/Chicken Lolipop.jpg",
     name: "Chicken Lolipop",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -334,7 +334,7 @@ export const food = [
   },
   {
     id: "33",
-    img: "/Css/Food_items/Puri Bhaji.jpg",
+    img: "/Food_items/Puri Bhaji.jpg",
     name: "Puri Bhaji",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",
@@ -344,7 +344,7 @@ export const food = [
   },
   {
     id: "34",
-    img: "/Css/Food_items/Samosa.jpg",
+    img: "/Food_items/Samosa.jpg",
     name: "Samosa",
     description: "Lorem ipsum dolor sit amet consectetur.",
     rating: "4.5",

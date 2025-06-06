@@ -1,0 +1,75 @@
+.order-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-container h1 {
+  font-size: 28px;
+  color: #28a745;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.order-container p {
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.order-summary {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.order-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.order-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.order-item p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.order-container h2 {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.order-container button {
+  margin-top: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.order-container button:hover {
+  background: #0056b3;
+}
